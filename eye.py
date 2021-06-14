@@ -82,21 +82,10 @@ with face_mesh.FaceMesh(
                 cv2.circle(left_eye_frame, (centroid_x,
                                             centroid_y), 2, (0, 255, 0))
 
-                # (x, y, w, h) = cv2.boundingRect(cnt)
-
-                # cv2.rectangle(left_eye_frame, (x, y),
-                #               (x+w, y+h), (0, 255, 0), 1)
-
-                # cv2.line(left_eye_frame, (x + int(w/2), y),
-                #          (x + int(w/2), y+h), (0, 255, 0), 1)
-
-                # cv2.line(left_eye_frame, (x, y + int(h/2)),
-                #          (x + w, y+int(h/2)), (0, 255, 0), 1)
                 break
 
             pupil_x, pupil_y = origin[0] + centroid_x, origin[1] + centroid_y
-            # cv2.circle(frame, (pupil_x,
-            #                    pupil_y), 5, (0, 255, 0), 2)
+
             cv2.line(frame, (pupil_x - 5, pupil_y),
                      (pupil_x + 5, pupil_y), (0, 255, 0), 1)
             cv2.line(frame, (pupil_x, pupil_y - 5),
